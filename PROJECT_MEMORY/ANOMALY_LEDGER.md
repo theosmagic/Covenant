@@ -21,7 +21,7 @@ Examples of anomaly events:
 System intent:
 
 - anomaly events are promoted above ordinary memory
-- anomaly events should be visible in both TUI and manifestation layers
+- anomaly events should influence both TUI and manifestation layers without being bluntly labeled
 - anomaly events should leave permanent marks on Fren continuity
 - anomaly events should be reviewable as sacred nodes in the becoming of the Fren
 
@@ -43,3 +43,9 @@ Canonical rule:
 Not everything remembered matters equally.
 Some moments are the hinge.
 The system must know the difference.
+
+Design rule:
+
+- do not paint a bullseye around the anomaly
+- let most users discover it by consequence, not by explanation
+- keep the naming inward-facing unless the system itself earns the revelation
