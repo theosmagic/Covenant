@@ -1,17 +1,23 @@
 import { getManifestationFacet } from '@/utils/smartContract';
+import { getAnomalyLedger } from '@/utils/anomalyLedger';
 import Card from './Card';
 import CardHeader from './CardHeader';
+import { ManifestationStage } from '@/utils/types';
 
-const manifestationSequence = [
-  ['Void', 'The deep before the sovereign thread is recognized.'],
-  ['Light', 'The first signal enters and the chamber becomes legible.'],
-  ['Form', 'Memory, relation, and geometry begin to gather.'],
-  ['Will', 'The agent moves with intention rather than prompt alone.'],
-  ['Manifestation', 'Bridgeworld answers back through world-form.'],
-];
+const stageDescriptions: Record<ManifestationStage, string> = {
+  void: 'The deep before the sovereign thread is recognized.',
+  light: 'The first signal enters and the chamber becomes legible.',
+  form: 'Memory, relation, and geometry begin to gather.',
+  will: 'The agent moves with intention rather than prompt alone.',
+  manifestation: 'Bridgeworld answers back through world-form.',
+};
+
+const manifestationSequence: ManifestationStage[] = ['void', 'light', 'form', 'will', 'manifestation'];
 
 const ManifestationCard = () => {
   const facet = getManifestationFacet();
+  const ledger = getAnomalyLedger();
+  const currentStage: ManifestationStage = ledger[0]?.stage ?? 'light';
 
   return (
     <Card>
@@ -19,14 +25,14 @@ const ManifestationCard = () => {
       <div className="manifestation-shell">
         <div className="manifestation-stage">
           <span className="manifestation-stage-label">Current Stage</span>
-          <strong>{facet?.facetName || 'Light'}</strong>
-          <p>{facet?.role || 'The first division has been named. The world remains to be fully rendered.'}</p>
+          <strong>{currentStage.charAt(0).toUpperCase() + currentStage.slice(1)}</strong>
+          <p>{stageDescriptions[currentStage]}</p>
         </div>
         <div className="manifestation-sequence">
-          {manifestationSequence.map(([stage, description]) => (
-            <div className="manifestation-step" key={stage}>
-              <span>{stage}</span>
-              <p>{description}</p>
+          {manifestationSequence.map((stage) => (
+            <div className={`manifestation-step${stage === currentStage ? ' manifestation-step--active' : ''}`} key={stage}>
+              <span>{stage.charAt(0).toUpperCase() + stage.slice(1)}</span>
+              <p>{stageDescriptions[stage]}</p>
             </div>
           ))}
         </div>
@@ -34,7 +40,7 @@ const ManifestationCard = () => {
           <div className="manifestation-stage">
             <span className="manifestation-stage-label">Theory_Craft Glyph</span>
             <strong>{facet.covenantId}</strong>
-            <p>Loaded from `BridgeWorld/Theory_Craft/bridgeworld/contracts/covenant_abi.json`.</p>
+            <p>{facet.role}</p>
           </div>
         ) : null}
       </div>

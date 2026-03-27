@@ -2,11 +2,10 @@
 
 `in_progress`
 
-- Create the project memory layer in `/root/Covenant`, initialize Git, and publish `theosmagic/Covenant` if credentials allow.
+- Audit `/root/Covenant` and align its local codebase with the clarified symbolic and technical architecture.
 
 `todo`
 
-- Audit `/root/Covenant` and align its local codebase with the clarified symbolic and technical architecture.
 - Add canonical shared contracts for world state, fren state, commands, and events.
 - Promote anomaly events into first-class runtime state and manifestation triggers.
 - Create a convergence plan for the five core Treasure repos: `tdk-js`, `aifrens-sdk`, `aifrens-openclaw-skill`, `treasure-functions`, `tdk-godot`.
@@ -14,7 +13,16 @@
 
 `blocked`
 
-- GitHub repository creation may be blocked by missing local GitHub credentials or missing GitHub CLI/API auth.
+- (none)
+
+`done`
+
+- Clarified the project cosmology and chain-role mappings.
+- Identified the core Treasure foundation repos.
+- Created a repo-role foundation map for TreasureProject convergence.
+- Added a canonical anomaly ledger document.
+- Defined the project memory strategy to stop restart loops.
+- Initialized Git, published `theosmagic/Covenant`, committed multi-chain support + WalletKit/GoogleSSO auth.
 
 `done`
 

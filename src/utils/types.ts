@@ -27,4 +27,13 @@ export type AnomalyLedgerEntry = {
   confidence: number;
 };
 
+export type FrenState = {
+  id: string;
+  stage: ManifestationStage;
+  autonomyLevel: number;        // 0–100
+  memoryAnchors: string[];      // ethereum tx hashes
+  chainOrigin: string;          // ronin by default
+  lastActive: string;           // ISO timestamp
+};
+
 export type { Magic } from '../hooks/MagicProvider'

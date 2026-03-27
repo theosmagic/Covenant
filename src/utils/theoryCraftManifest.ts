@@ -1,6 +1,9 @@
+const THEORY_CRAFT_BASE =
+  process.env.NEXT_PUBLIC_THEORY_CRAFT_URL || 'http://localhost:5000';
+
 export const theoryCraftManifest = {
-  root: '/mnt/Vault/BridgeWorld/Theory_Craft',
-  artifact: '/mnt/Vault/BridgeWorld/Theory_Craft/bridgeworld/contracts/covenant_abi.json',
+  root: THEORY_CRAFT_BASE,
+  artifact: `${THEORY_CRAFT_BASE}/covenant/abi`,
   primaryFacet: {
     covenantId: '9xD1',
     facetName: 'AssetFacet',

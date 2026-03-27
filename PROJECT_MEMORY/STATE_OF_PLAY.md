@@ -26,11 +26,18 @@ Current implementation truth:
 
 Current immediate goal:
 
-- Turn `/root/Covenant` into the canonical continuity chamber for the project.
-- Initialize version control.
-- Create and publish `theosmagic/Covenant` if environment credentials allow.
+- Audit the local codebase and align it with the symbolic/technical architecture.
+- Identify gaps: missing shared contracts, missing event boundaries, missing ownership lines.
+
+Current implementation truth:
+
+- `theosmagic/Covenant` is live on GitHub (commit 494cc88).
+- Multi-chain support added: Ronin (2020), Arbitrum (42161), Base (8453), BNB (56), Monad (10143).
+- WalletKit + GoogleSSO auth components added.
+- `theoryCraftManifest.ts` bridges the frontend to the Theory_Craft engine (AssetFacet / 9xD1).
+- `gh` CLI is authenticated as `theosmagic` with repo scope.
 
 Open issues:
 
-- GitHub repository creation depends on available credentials in this environment.
-- TreasureProject convergence work has been mapped conceptually but not yet implemented in code here.
+- Git committer identity is set to system default — should be fixed with `git config --global`.
+- TreasureProject convergence work has been mapped conceptually but not yet implemented in code.

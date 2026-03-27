@@ -7,6 +7,7 @@ import UserInfo from '@/components/magic/cards/UserInfoCard';
 import DevLinks from './DevLinks';
 import Header from './Header';
 import SmartContract from '../magic/cards/SmartContract';
+import ArbitrumCard from '../magic/cards/ArbitrumCard';
 import { isTestnet } from '@/utils/smartContract';
 import ManifestationCard from './ManifestationCard';
 
@@ -27,6 +28,7 @@ export default function Dashboard({ token, setToken }: LoginProps) {
           <UserInfo token={token} setToken={setToken} />
           <WalletMethods token={token} setToken={setToken} />
           <SendTransaction />
+          <ArbitrumCard />
           <ManifestationCard />
         </div>
         {isTestnet() && (

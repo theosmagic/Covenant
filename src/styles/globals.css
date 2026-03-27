@@ -396,6 +396,10 @@ a {
   @apply rounded-xl border border-solid border-[#ebe8f4] px-4 py-3;
 }
 
+.manifestation-step--active {
+  @apply border-[#6851ff] bg-[#f6f1ff];
+}
+
 .manifestation-step > span {
   @apply text-sm font-semibold text-[#140f24];
 }
