@@ -2,7 +2,25 @@
 
 `in_progress`
 
-- Build the first persistent runtime slice: wire AIFrensClient into frenState, TDK session on login, anchorMemory on tx confirm, command buttons in ArbitrumCard.
+- Add `/magic/price` proxy and `/godot/state` WebSocket relay to Theory_Craft server.
+
+`todo`
+
+- Wire stage-advanced events to Godot via Theory_Craft relay.
+
+`done`
+
+- Clarified the project cosmology and chain-role mappings.
+- Identified the core Treasure foundation repos.
+- Created a repo-role foundation map for TreasureProject convergence.
+- Added a canonical anomaly ledger document.
+- Defined the project memory strategy to stop restart loops.
+- Initialized Git, published `theosmagic/Covenant`, committed multi-chain support + WalletKit/GoogleSSO auth.
+- Audit pass: cleaned login copy, wired ManifestationCard to live anomaly ledger stage, added ArbitrumCard, env-driven theoryCraftManifest, FrenState type.
+- Canonical shared contracts: `worldState`, `commands`, `events`, `frenState`.
+- Anomaly events promoted to first-class triggers. `useAnomalyRuntime` hook. Reactive UI.
+- Convergence plan written: five repos mapped, gap analysis, 4-phase order, D-008–D-011.
+- Phase 1 (Identity): `tdkSession.ts` — TDK session established on login, fren hydrated from TDK user. `anchorMemory` on tx confirm. ArbitrumCard command buttons (Deploy Legion, Harvest, Fish) → `enqueueCommand` → Theory_Craft `/agent-command`. `.env.example` added.
 
 `todo`
 

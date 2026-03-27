@@ -1,5 +1,24 @@
 # Session Log
 
+## 2026-03-27 (session 7)
+
+- Phase 1 runtime slice complete (commit e9ffb56).
+- `tdkSession.ts`: calls `tdk-api.spellcaster.lol/users/me` with Magic auth token on login. Hydrates `frenState` (id, chainOrigin) and `worldState` (fren). Clears on logout.
+- `common.ts`: `saveUserInfo` fires `establishTDKSession` async. `logout` calls `clearTDKSession`.
+- `SendTransactionCard`: on tx confirm → `anchorMemory(txHash)` + `emitEvent('transaction-confirmed', 'polygon')`.
+- `ArbitrumCard`: Deploy Legion / Harvest / Fish buttons → `enqueueCommand` → POST to Theory_Craft `/agent-command` (graceful fallback if server offline).
+- `.env.example` created with all required vars.
+- Advanced queue to: `/magic/price` proxy + `/godot/state` WebSocket relay in Theory_Craft server.
+
+## 2026-03-27 (session 7)
+
+- Phase 1 runtime slice complete (commit e9ffb56).
+- `tdkSession.ts`: calls `tdk-api.spellcaster.lol/users/me` on login, hydrates frenState + worldState. Clears on logout.
+- `SendTransactionCard`: `anchorMemory(txHash)` + `emitEvent('transaction-confirmed')` on confirm.
+- `ArbitrumCard`: Deploy Legion / Harvest / Fish → `enqueueCommand` → POST Theory_Craft `/agent-command`.
+- `.env.example` created.
+- Advanced queue to: `/magic/price` proxy + `/godot/state` relay in Theory_Craft server.
+
 ## 2026-03-27 (session 6)
 
 - Convergence plan written to `PROJECT_MEMORY/CONVERGENCE_PLAN.md` (commit ee8c195).

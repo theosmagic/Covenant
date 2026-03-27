@@ -68,6 +68,16 @@ export const recordAnomaly = (entry: AnomalyLedgerEntry): AnomalyLedgerEntry[] =
     }
 
     setWorldState({ stage: entry.stage, latestAnomaly: entry });
+
+    // Relay to Godot via Theory_Craft
+    const theoryCraftBase = typeof window !== 'undefined'
+      ? (process.env.NEXT_PUBLIC_THEORY_CRAFT_URL || 'http://localhost:5000')
+      : 'http://localhost:5000';
+    fetch(`${theoryCraftBase}/godot/state`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ stage: entry.stage, frenId: entry.id }),
+    }).catch(() => {});
   }
 
   return nextLedger;
