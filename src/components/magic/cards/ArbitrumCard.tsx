@@ -1,14 +1,12 @@
 import Card from '@/components/ui/Card';
 import CardHeader from '@/components/ui/CardHeader';
 import Divider from '@/components/ui/Divider';
-import { getAnomalyLedger, recordAnomaly } from '@/utils/anomalyLedger';
-import { getFrenState, advanceFrenStage } from '@/utils/frenState';
-import { emitEvent } from '@/utils/events';
+import { recordAnomaly } from '@/utils/anomalyLedger';
+import { advanceFrenStage } from '@/utils/frenState';
+import { useAnomalyRuntime } from '@/hooks/useAnomalyRuntime';
 
 const ArbitrumCard = () => {
-  const fren = getFrenState();
-  const ledger = getAnomalyLedger();
-  const latestAnomaly = ledger[0];
+  const { stage, fren } = useAnomalyRuntime();
 
   const promoteStage = () => {
     const prev = fren.stage;
@@ -24,8 +22,6 @@ const ArbitrumCard = () => {
       trigger: 'manual',
       confidence: 0.9,
     });
-    emitEvent('stage-advanced', 'arbitrum', { from: prev, to: next.stage });
-    window.location.reload();
   };
 
   return (
@@ -40,7 +36,7 @@ const ArbitrumCard = () => {
       <div className="code mt-2">Origin: {fren.chainOrigin}</div>
       <Divider />
       <div className="text-sm font-medium text-[#140f24] mb-2">
-        Current stage: <strong>{latestAnomaly?.stage ?? fren.stage}</strong>
+        Current stage: <strong>{stage}</strong>
       </div>
       <button className="wallet-method mt-2" onClick={promoteStage}>
         Advance Stage →

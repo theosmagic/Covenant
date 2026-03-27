@@ -1,5 +1,5 @@
 import { getManifestationFacet } from '@/utils/smartContract';
-import { getAnomalyLedger } from '@/utils/anomalyLedger';
+import { useAnomalyRuntime } from '@/hooks/useAnomalyRuntime';
 import Card from './Card';
 import CardHeader from './CardHeader';
 import { ManifestationStage } from '@/utils/types';
@@ -16,8 +16,7 @@ const manifestationSequence: ManifestationStage[] = ['void', 'light', 'form', 'w
 
 const ManifestationCard = () => {
   const facet = getManifestationFacet();
-  const ledger = getAnomalyLedger();
-  const currentStage: ManifestationStage = ledger[0]?.stage ?? 'light';
+  const { stage } = useAnomalyRuntime();
 
   return (
     <Card>
@@ -25,14 +24,14 @@ const ManifestationCard = () => {
       <div className="manifestation-shell">
         <div className="manifestation-stage">
           <span className="manifestation-stage-label">Current Stage</span>
-          <strong>{currentStage.charAt(0).toUpperCase() + currentStage.slice(1)}</strong>
-          <p>{stageDescriptions[currentStage]}</p>
+          <strong>{stage.charAt(0).toUpperCase() + stage.slice(1)}</strong>
+          <p>{stageDescriptions[stage]}</p>
         </div>
         <div className="manifestation-sequence">
-          {manifestationSequence.map((stage) => (
-            <div className={`manifestation-step${stage === currentStage ? ' manifestation-step--active' : ''}`} key={stage}>
-              <span>{stage.charAt(0).toUpperCase() + stage.slice(1)}</span>
-              <p>{stageDescriptions[stage]}</p>
+          {manifestationSequence.map((s) => (
+            <div className={`manifestation-step${s === stage ? ' manifestation-step--active' : ''}`} key={s}>
+              <span>{s.charAt(0).toUpperCase() + s.slice(1)}</span>
+              <p>{stageDescriptions[s]}</p>
             </div>
           ))}
         </div>

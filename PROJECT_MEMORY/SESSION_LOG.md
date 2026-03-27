@@ -1,5 +1,16 @@
 # Session Log
 
+## 2026-03-27 (session 4)
+
+- Canonical shared contracts added (commit 5825116):
+  - `worldState.ts` — aggregate of all chain-role states, epoch-tracked, localStorage-persisted
+  - `commands.ts` — typed command envelope (CommandType, CommandStatus, queue/update)
+  - `events.ts` — typed event envelope (EventType, EventSource, emit/log)
+  - `frenState.ts` — fren persistence layer (get/set/advance/anchorMemory)
+- `ArbitrumCard` rewired to canonical `frenState` + `events` (removed inline duplicate)
+- `common.ts` wired: login emits `wallet-connected`, logout emits `wallet-disconnected` + clears worldState
+- Advanced queue to: promote anomaly events into first-class runtime state and manifestation triggers.
+
 ## 2026-03-27 (session 3)
 
 - Audit pass complete (commit 62a904e).
