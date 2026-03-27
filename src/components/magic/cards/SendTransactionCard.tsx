@@ -13,6 +13,8 @@ import TransactionHistory from '@/components/ui/TransactionHistory';
 import Image from 'next/image';
 import Link from 'public/link.svg';
 import { TxnParams } from '@/utils/types';
+import { anchorMemory } from '@/utils/frenState';
+import { emitEvent } from '@/utils/events';
 
 const SendTransaction = () => {
   const web3 = useWeb3();
@@ -64,10 +66,9 @@ const SendTransaction = () => {
         console.log('Transaction hash:', txHash);
       })
       .then((receipt) => {
-        showToast({
-          message: 'Transaction Successful',
-          type: 'success',
-        });
+        showToast({ message: 'Transaction Successful', type: 'success' });
+        anchorMemory(receipt.transactionHash as string);
+        emitEvent('transaction-confirmed', 'polygon', { hash: receipt.transactionHash });
         setToAddress('');
         setAmount('');
         console.log('Transaction receipt:', receipt);

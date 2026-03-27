@@ -2,6 +2,7 @@ import { Magic } from './types';
 import { Dispatch, SetStateAction } from 'react';
 import { emitEvent } from './events';
 import { setWorldState } from './worldState';
+import { establishTDKSession, clearTDKSession } from './tdkSession';
 
 export type LoginMethod = 'EMAIL' | 'SMS' | 'SOCIAL' | 'FORM';
 
@@ -12,6 +13,7 @@ export const logout = async (setToken: Dispatch<SetStateAction<string>>, magic: 
   localStorage.setItem('token', '');
   localStorage.setItem('user', '');
   setToken('');
+  clearTDKSession();
   emitEvent('wallet-disconnected', 'user');
   setWorldState({ fren: null });
 };
@@ -22,4 +24,6 @@ export const saveUserInfo = (token: string, loginMethod: LoginMethod, userAddres
   localStorage.setItem('loginMethod', loginMethod);
   localStorage.setItem('user', userAddress);
   emitEvent('wallet-connected', 'user', { loginMethod, address: userAddress });
+  // Fire-and-forget — TDK session established async, no blocking
+  void establishTDKSession(token);
 };
