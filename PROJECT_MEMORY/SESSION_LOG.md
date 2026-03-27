@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-27 (session 3)
+
+- Audit pass complete (commit 62a904e).
+- Cleaned Login copy — removed exposed internal paths/addresses (soul.md compliance).
+- Added `FrenState` type to `types.ts` (id, stage, autonomyLevel, memoryAnchors, chainOrigin).
+- Wired `ManifestationCard` to live stage from anomaly ledger instead of static sequence.
+- Added `ArbitrumCard` — world-form layer, reads fren state + anomaly stage, exposes stage promotion.
+- `theoryCraftManifest` now env-driven via `NEXT_PUBLIC_THEORY_CRAFT_URL` (defaults to localhost:5000).
+- Advanced queue to: add canonical shared contracts for world state, fren state, commands, events.
+
 ## 2026-03-27 (session 2)
 
 - Committed and pushed all pending changes to `theosmagic/Covenant` (commit 494cc88).
