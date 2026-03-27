@@ -1,5 +1,12 @@
 # Session Log
 
+## 2026-03-27 (session 8)
+
+- Phase 2+4 complete (commit 5c5c2de).
+- Theory_Craft `server.js`: `/magic/price` CoinGecko proxy (60s cache) + `/godot/state` POST/GET + WebSocket broadcast.
+- `anomalyLedger.ts`: high-confidence stage advances POST to `/godot/state` automatically.
+- Advanced queue to: wire MAGIC price into worldState on dashboard mount.
+
 ## 2026-03-27 (session 7)
 
 - Phase 1 runtime slice complete (commit e9ffb56).

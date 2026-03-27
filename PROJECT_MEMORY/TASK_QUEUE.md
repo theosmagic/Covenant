@@ -2,11 +2,16 @@
 
 `in_progress`
 
-- Add `/magic/price` proxy and `/godot/state` WebSocket relay to Theory_Craft server.
+- Wire MAGIC price from `/magic/price` into `worldState` on dashboard mount.
 
 `todo`
 
-- Wire stage-advanced events to Godot via Theory_Craft relay.
+- Godot scene: stage-driven shader/mesh variant on `stage-advanced` WebSocket message.
+
+`done`
+
+- All previous sessions.
+- Phase 2+4: `/magic/price` (CoinGecko proxy, 60s cache) + `/godot/state` (WebSocket relay) added to Theory_Craft server. `stage-advanced` anomalies POST to `/godot/state` automatically.
 
 `done`
 
