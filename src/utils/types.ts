@@ -14,6 +14,17 @@ export type TxnParams = {
   gasPrice?: string;
 };
 
+export type ManifestationStage = 'void' | 'light' | 'form' | 'will' | 'manifestation';
 
+export type AnomalyLedgerEntry = {
+  id: string;
+  timestamp: string;
+  title: string;
+  description: string;
+  stage: ManifestationStage;
+  chainProvenance: string;
+  trigger: string;
+  confidence: number;
+};
 
 export type { Magic } from '../components/magic/MagicProvider'

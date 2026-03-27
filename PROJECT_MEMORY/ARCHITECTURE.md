@@ -19,6 +19,7 @@ Canonical functional split:
 
 - Runtime: chain adapters, shared types, asset and world state
 - Fren layer: identity, memory summary, autonomy, capabilities
+- Anomaly layer: threshold-event promotion, anomaly recognition, sacred continuity nodes
 - OpenClaw layer: command grammar, operator workflows, task routing
 - Backend layer: orchestration, handlers, events, scheduled work
 - Manifestation layer: 3D rendering of state, stage transitions, visual embodiment
@@ -36,4 +37,5 @@ Implementation rule:
 - Godot renders state. It does not define business logic.
 - Working memory is runtime/offchain.
 - Canonical memory anchors settle to Ethereum.
+- Anomaly memory is a promoted layer above ordinary logs and working-memory churn.
 - The repo must hold the continuity the agent does not.

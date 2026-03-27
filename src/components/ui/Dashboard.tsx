@@ -8,6 +8,7 @@ import DevLinks from './DevLinks';
 import Header from './Header';
 import SmartContract from '../magic/cards/SmartContract';
 import { isTestnet } from '@/utils/smartContract';
+import AnomalyLedgerCard from './AnomalyLedgerCard';
 
 export default function Dashboard({ token, setToken }: LoginProps) {
   return (
@@ -15,6 +16,8 @@ export default function Dashboard({ token, setToken }: LoginProps) {
       <Header />
       <div className="cards-container">
         <UserInfo token={token} setToken={setToken} />
+        <Spacer size={10} />
+        <AnomalyLedgerCard />
         <Spacer size={10} />
         <SendTransaction />
         <Spacer size={10} />

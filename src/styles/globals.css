@@ -247,6 +247,35 @@ ul {
 .card-label {
   @apply text-sm font-medium cursor-pointer;
 }
+
+.anomaly-ledger {
+  @apply flex flex-col gap-3;
+}
+
+.anomaly-entry {
+  @apply rounded-xl border border-solid border-[#dddbe0] bg-[#faf9ff] px-4 py-3;
+}
+
+.anomaly-entry-header {
+  @apply mb-2 flex items-center justify-between gap-3;
+}
+
+.anomaly-title {
+  @apply text-sm font-semibold text-[#24124d];
+}
+
+.anomaly-stage {
+  @apply rounded-full bg-[#edebff] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#6851ff];
+}
+
+.anomaly-description {
+  @apply m-0 text-sm leading-6 text-[#4b5563];
+}
+
+.anomaly-meta {
+  @apply mt-3 flex flex-wrap gap-3 text-[11px] font-medium uppercase tracking-[0.08em] text-[#77767a];
+}
+
 .toast {
   @apply fixed w-fit text-white font-medium shadow-[4px_8px_20px_rgba(0,0,0,0.15)] mx-auto my-0 px-4 py-2 rounded-[10px] top-[30px] inset-x-0 bg-[#00875f];
 }
