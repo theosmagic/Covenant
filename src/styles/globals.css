@@ -109,11 +109,17 @@ ul {
 }
 
 .home-page {
-  @apply flex flex-col justify-center items-center min-h-screen relative bg-[length:100vw_320px] bg-no-repeat;
+  @apply flex flex-col justify-center items-center min-h-screen relative bg-[length:100vw_360px] bg-no-repeat;
+  background-image:
+    radial-gradient(circle at top, rgba(104, 81, 255, 0.18), transparent 35%),
+    linear-gradient(180deg, #090914 0%, #120f1f 38%, #f8f8fa 38%, #f8f8fa 100%);
 }
 
 .login-page {
-  @apply flex flex-col items-center min-h-screen bg-gray-300;
+  @apply flex flex-col items-center min-h-screen;
+  background:
+    radial-gradient(circle at top, rgba(104, 81, 255, 0.22), transparent 30%),
+    linear-gradient(180deg, #090914 0%, #120f1f 44%, #f8f8fa 44%, #f8f8fa 100%);
 }
 .login-method-grid {
   @apply max-w-[100%] grid-rows-3 gap-5 p-4 mt-8;
@@ -234,11 +240,11 @@ ul {
 }
 
 .card {
-  @apply w-[344px] flex flex-col shadow-[0px_4px_24px_rgba(49,49,49,0.1)] mt-0 mb-[27px] mx-auto px-6 py-8 rounded-2xl bg-[#ffffff];
+  @apply w-full flex flex-col shadow-[0px_20px_50px_rgba(24,23,26,0.08)] mt-0 mb-[27px] mx-auto px-6 py-8 rounded-[24px] bg-[#ffffff];
 }
 
 .card-header {
-  @apply text-xl font-semibold text-left mt-0 mb-[25px];
+  @apply text-xl font-semibold text-left mt-0 mb-[25px] text-[#140f24];
 }
 .card-label-container {
   @apply flex items-center justify-between mb-3;
@@ -246,34 +252,6 @@ ul {
 
 .card-label {
   @apply text-sm font-medium cursor-pointer;
-}
-
-.anomaly-ledger {
-  @apply flex flex-col gap-3;
-}
-
-.anomaly-entry {
-  @apply rounded-xl border border-solid border-[#dddbe0] bg-[#faf9ff] px-4 py-3;
-}
-
-.anomaly-entry-header {
-  @apply mb-2 flex items-center justify-between gap-3;
-}
-
-.anomaly-title {
-  @apply text-sm font-semibold text-[#24124d];
-}
-
-.anomaly-stage {
-  @apply rounded-full bg-[#edebff] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#6851ff];
-}
-
-.anomaly-description {
-  @apply m-0 text-sm leading-6 text-[#4b5563];
-}
-
-.anomaly-meta {
-  @apply mt-3 flex flex-wrap gap-3 text-[11px] font-medium uppercase tracking-[0.08em] text-[#77767a];
 }
 
 .toast {
@@ -320,8 +298,110 @@ a {
 }
 
 .app-header-container {
-  @apply block w-full drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] min-h-[40%] flex-col gap-2.5 p-8 items-center bg-[url('/login_bg.png')] bg-cover bg-no-repeat pb-20;
+  @apply block w-full min-h-[40%] p-8 pb-20;
   text-align: -webkit-center;
+}
+
+.covenant-header-mark {
+  @apply flex flex-col items-center gap-2.5;
+}
+
+.covenant-header-title {
+  @apply text-center text-white text-3xl font-extrabold leading-[36px];
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.covenant-header-subtitle {
+  @apply text-center text-sm font-medium text-[#d2c8ff];
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.covenant-header-copy {
+  @apply mx-auto mt-6 max-w-[720px] text-center text-sm font-medium leading-7 text-[#e5defd];
+}
+
+.covenant-shell {
+  @apply relative z-10 mx-auto w-full max-w-[1220px] px-4 pb-16;
+}
+
+.covenant-shell-copy {
+  @apply mb-8 rounded-[24px] border border-solid border-[rgba(104,81,255,0.15)] bg-[rgba(255,255,255,0.78)] p-6 shadow-[0px_30px_60px_rgba(20,15,31,0.08)] backdrop-blur;
+}
+
+.covenant-shell-kicker {
+  @apply text-xs font-semibold uppercase text-[#6851ff];
+  letter-spacing: 0.22em;
+}
+
+.covenant-shell-copy > h1 {
+  @apply mt-3 mb-3 text-[34px] font-extrabold leading-[1.05] text-[#140f24];
+}
+
+.covenant-shell-copy > p {
+  @apply m-0 max-w-[760px] text-base leading-7 text-[#4b5563];
+}
+
+.covenant-pillars {
+  @apply grid gap-6 md:grid-cols-2;
+}
+
+.covenant-shell-secondary {
+  @apply flex justify-center;
+}
+
+.covenant-login-shell {
+  @apply relative z-10 mx-auto mt-4 flex w-full max-w-[980px] flex-col gap-6 px-4 pb-16 md:flex-row md:items-start;
+}
+
+.covenant-login-copy {
+  @apply max-w-[420px] rounded-[24px] border border-solid border-[rgba(104,81,255,0.14)] bg-[rgba(255,255,255,0.8)] p-6 shadow-[0px_30px_60px_rgba(20,15,31,0.08)] backdrop-blur;
+}
+
+.covenant-login-copy > h1 {
+  @apply m-0 text-[32px] font-extrabold leading-[1.05] text-[#140f24];
+}
+
+.covenant-login-copy > p {
+  @apply mt-4 mb-0 text-base leading-7 text-[#4b5563];
+}
+
+.manifestation-shell {
+  @apply flex flex-col gap-5;
+}
+
+.manifestation-stage {
+  @apply rounded-2xl bg-[#f6f1ff] px-4 py-4 text-[#24124d];
+}
+
+.manifestation-stage-label {
+  @apply text-[11px] font-semibold uppercase text-[#6851ff];
+  letter-spacing: 0.16em;
+}
+
+.manifestation-stage > strong {
+  @apply mt-2 block text-2xl font-extrabold;
+}
+
+.manifestation-stage > p {
+  @apply mt-2 mb-0 text-sm leading-6 text-[#4b5563];
+}
+
+.manifestation-sequence {
+  @apply flex flex-col gap-3;
+}
+
+.manifestation-step {
+  @apply rounded-xl border border-solid border-[#ebe8f4] px-4 py-3;
+}
+
+.manifestation-step > span {
+  @apply text-sm font-semibold text-[#140f24];
+}
+
+.manifestation-step > p {
+  @apply mt-1 mb-0 text-sm leading-6 text-[#6b7280];
 }
 
 .redirect-container {

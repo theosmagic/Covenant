@@ -11,7 +11,7 @@ export type TxnParams = {
   value: string;
   maxFeePerGas?: bigint;
   maxPriorityFeePerGas?: bigint;
-  gasPrice?: string;
+  gasPrice?: string | bigint;
 };
 
 export type ManifestationStage = 'void' | 'light' | 'form' | 'will' | 'manifestation';
@@ -27,4 +27,4 @@ export type AnomalyLedgerEntry = {
   confidence: number;
 };
 
-export type { Magic } from '../components/magic/MagicProvider'
+export type { Magic } from '../hooks/MagicProvider'

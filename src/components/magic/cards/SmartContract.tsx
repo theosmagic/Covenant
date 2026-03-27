@@ -20,7 +20,7 @@ const SmartContract = () => {
   const [newValue, setNewValue] = useState<string>('');
   const [copied, setCopied] = useState('Copy');
   const [updating, setUpdating] = useState<boolean>(false);
-  const [hash, setHash] = useState<string>("");
+  const [hash, setHash] = useState<string>('');
 
   useEffect(() => {
     const initialize = async () => {
@@ -31,8 +31,8 @@ const SmartContract = () => {
         const contract = new web3.eth.Contract(abi, address);
 
         try {
-          const value = await contract.methods.retrieve().call();
-          setValue(value);
+          const storedValue = await contract.methods.retrieve().call();
+          setValue(Number(storedValue));
         } catch (error) {
           console.error('Error retrieving value:', error);
         }
@@ -73,8 +73,8 @@ const SmartContract = () => {
         // Send the transaction
         await contract.methods.store(Number(newValue)).send({
           from: accounts[0],
-          gasPrice: gasPrice,
-          gas: gasLimit
+          gasPrice: gasPrice.toString(),
+          gas: gasLimit.toString()
         })
           .on('transactionHash', (txHash) => {
             setHash(txHash);
@@ -91,7 +91,8 @@ const SmartContract = () => {
           });
 
         setUpdating(false);
-        setValue(await contract.methods.retrieve().call());
+        const updatedValue = await contract.methods.retrieve().call();
+        setValue(Number(updatedValue));
       } catch (error: any) {
         showToast({ message: error.message, type: 'error' });
         console.error('Error submitting value:', error);
@@ -121,7 +122,7 @@ const SmartContract = () => {
       <Divider />
       <div>
         <div>
-          <strong>Stored Value: </strong>{value !== undefined ? value.toString() : "...loading"}
+          <strong>Stored Value: </strong>{value !== undefined ? value.toString() : '...loading'}
         </div>
         <Spacer size={20} />
         <FormInput
@@ -131,7 +132,7 @@ const SmartContract = () => {
           placeholder="Enter new value"
         />
         <FormButton onClick={submit} disabled={updating}>
-          {updating ? "Updating value" : "Submit"}
+          {updating ? 'Updating value' : 'Submit'}
         </FormButton>
       </div>
     </Card>

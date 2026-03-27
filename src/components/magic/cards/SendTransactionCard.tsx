@@ -47,8 +47,12 @@ const SendTransaction = () => {
 
     if (isEip1559Supported()) {
       const feeData = await web3.eth.calculateFeeData();
-      txnParams.maxFeePerGas = BigInt(feeData.maxFeePerGas);
-      txnParams.maxPriorityFeePerGas = BigInt(feeData.maxPriorityFeePerGas);
+      if (feeData.maxFeePerGas != null) {
+        txnParams.maxFeePerGas = BigInt(feeData.maxFeePerGas);
+      }
+      if (feeData.maxPriorityFeePerGas != null) {
+        txnParams.maxPriorityFeePerGas = BigInt(feeData.maxPriorityFeePerGas);
+      }
     } else {
       txnParams.gasPrice = await web3.eth.getGasPrice();
     }
@@ -81,7 +85,7 @@ const SendTransaction = () => {
 
   return (
     <Card>
-      <CardHeader id="send-transaction">Send Transaction</CardHeader>
+      <CardHeader id="energy">Polygon / Energy</CardHeader>
       {getFaucetUrl() && (
         <div>
           <a href={getFaucetUrl()} target="_blank" rel="noreferrer">

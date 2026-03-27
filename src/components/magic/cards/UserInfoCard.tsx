@@ -68,7 +68,7 @@ const UserInfo = ({ token, setToken }: LoginProps) => {
 
   return (
     <Card>
-      <CardHeader id="Wallet">Wallet</CardHeader>
+      <CardHeader id="sovereign">Ronin / Sovereign</CardHeader>
       <CardLabel leftHeader="Status" rightAction={<div onClick={disconnect}>Disconnect</div>} isDisconnect />
       <div className="flex-row">
         <div className="green-dot" />

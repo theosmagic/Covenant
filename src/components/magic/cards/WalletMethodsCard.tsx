@@ -16,14 +16,14 @@ const WalletMethods = ({ token, setToken }: LoginProps) => {
   );
   return (
     <Card>
-      <CardHeader id="methods">User Methods</CardHeader>
+      <CardHeader id="record">Ethereum / Record</CardHeader>
 	  
 	  	{loginMethod && loginMethod == 'EMAIL' && (
-			<>
-				<UpdateEmail />
-				<Divider />
-			</>
-		)}	  
+        <>
+          <UpdateEmail />
+          <Divider />
+        </>
+      )}	  
       <GetIdToken />
       <Divider />
       <GetMetadata />
