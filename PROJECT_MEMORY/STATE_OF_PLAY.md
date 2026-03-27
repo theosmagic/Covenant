@@ -21,6 +21,7 @@ Current implementation truth:
 
 - The concept app exists separately and expresses the Bridgeworld Manifestation Engine direction.
 - TreasureProject already contains the major substrate repos needed for convergence.
+- A repo-level Treasure foundation map now exists in `PROJECT_MEMORY/FOUNDATION_MAP.md`.
 - The problem is not lack of vision; the problem is lack of persistent collaboration state across agent restarts.
 
 Current immediate goal:

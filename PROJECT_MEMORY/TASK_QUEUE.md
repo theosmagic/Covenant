@@ -19,4 +19,5 @@
 
 - Clarified the project cosmology and chain-role mappings.
 - Identified the core Treasure foundation repos.
+- Created a repo-role foundation map for TreasureProject convergence.
 - Defined the project memory strategy to stop restart loops.
