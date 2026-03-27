@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-03-27 (session 6)
+
+- Convergence plan written to `PROJECT_MEMORY/CONVERGENCE_PLAN.md` (commit ee8c195).
+- All five repos read and mapped: tdk-js (runtime spine), aifrens-sdk (fren capability API), aifrens-openclaw-skill (OpenClaw bridge + Frencoin economy), treasure-functions (backend execution plane), tdk-godot (manifestation client).
+- Gap analysis: 6 missing connections identified between Covenant contracts and the five repos.
+- 4-phase convergence order: Identity → Energy → World-Form → Manifestation.
+- 6 immediate next actions defined.
+- D-008–D-011 recorded in DECISIONS.md.
+- Advanced queue to: build first persistent runtime slice (Phase 1 + Phase 3 entry points).
+
 ## 2026-03-27 (session 5)
 
 - Anomaly events promoted to first-class triggers (commit 683119f).
