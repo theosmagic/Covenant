@@ -10,7 +10,7 @@ import { RPCError } from 'magic-sdk';
 const UpdateEmail = () => {
   const { magic } = useMagic();
   const [disabled, setDisabled] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('theos@magic.link');
   const [emailError, setEmailError] = useState(false);
 
   const updateEmail = useCallback(async () => {
@@ -24,7 +24,7 @@ const UpdateEmail = () => {
         await magic.auth.updateEmailWithUI({ email, showUI: true });
         showToast({ message: 'Email Updated!', type: 'success' });
         setDisabled(false);
-        setEmail('');
+        setEmail('theos@magic.link');
       }
     } catch (error) {
       setDisabled(false);
@@ -44,7 +44,7 @@ const UpdateEmail = () => {
 
   return (
     <div className="wallet-method-container">
-      <FormInput value={email} onChange={handleEmailChange} placeholder="New Email" />
+      <FormInput value={email} onChange={handleEmailChange} placeholder="theos@magic.link" />
       <button className="wallet-method" onClick={updateEmail} disabled={disabled}>
         {disabled ? (
           <div className="loading-container w-[76px]">

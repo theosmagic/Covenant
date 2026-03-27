@@ -20,6 +20,18 @@ const DevLinks = ({ primary = false, footer = false }: { primary?: boolean; foot
         Discord
       </a>
     </div>
+    <div className={`link-divider ${primary ? 'bg-[#DDDBE0]' : 'bg-[#a270d3]'}`} />
+    <div className={`link ${primary ? 'text-[#6851ff]' : 'text-[#fff]'}`}>
+      <a href="http://localhost:5000/covenant/config" target="_blank" rel="noreferrer">
+        Theory_Craft
+      </a>
+    </div>
+    <div className={`link-divider ${primary ? 'bg-[#DDDBE0]' : 'bg-[#a270d3]'}`} />
+    <div className={`link ${primary ? 'text-[#6851ff]' : 'text-[#fff]'}`}>
+      <a href="http://localhost:5000/treasure/config" target="_blank" rel="noreferrer">
+        Treasure
+      </a>
+    </div>
   </div>
 );
 

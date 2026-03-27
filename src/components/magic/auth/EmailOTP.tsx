@@ -11,7 +11,7 @@ import FormInput from '@/components/ui/FormInput';
 
 const EmailOTP = ({ token, setToken }: LoginProps) => {
   const { magic } = useMagic();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('theos@magic.link');
   const [emailError, setEmailError] = useState(false);
   const [isLoginInProgress, setLoginInProgress] = useState(false);
 
@@ -32,7 +32,7 @@ const EmailOTP = ({ token, setToken }: LoginProps) => {
 
         setToken(token);
         saveUserInfo(token, 'EMAIL', metadata?.publicAddress);
-        setEmail('');
+        setEmail('theos@magic.link');
       } catch (e) {
         console.log('login error: ' + JSON.stringify(e));
         if (e instanceof RPCError) {
@@ -65,7 +65,7 @@ const EmailOTP = ({ token, setToken }: LoginProps) => {
             if (emailError) setEmailError(false);
             setEmail(e.target.value);
           }}
-          placeholder={token.length > 0 ? 'Already logged in' : 'Email'}
+          placeholder={token.length > 0 ? 'Already logged in' : 'theos@magic.link'}
           value={email}
         />
         {emailError && <span className="error">Enter a valid email</span>}

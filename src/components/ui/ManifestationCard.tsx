@@ -1,3 +1,4 @@
+import { getManifestationFacet } from '@/utils/smartContract';
 import Card from './Card';
 import CardHeader from './CardHeader';
 
@@ -10,14 +11,16 @@ const manifestationSequence = [
 ];
 
 const ManifestationCard = () => {
+  const facet = getManifestationFacet();
+
   return (
     <Card>
-      <CardHeader id="manifestation">Arbitrum / Manifestation</CardHeader>
+      <CardHeader id="manifestation">BridgeWorld / Manifestation</CardHeader>
       <div className="manifestation-shell">
         <div className="manifestation-stage">
           <span className="manifestation-stage-label">Current Stage</span>
-          <strong>Light</strong>
-          <p>The first division has been named. The world remains to be fully rendered.</p>
+          <strong>{facet?.facetName || 'Light'}</strong>
+          <p>{facet?.role || 'The first division has been named. The world remains to be fully rendered.'}</p>
         </div>
         <div className="manifestation-sequence">
           {manifestationSequence.map(([stage, description]) => (
@@ -27,6 +30,13 @@ const ManifestationCard = () => {
             </div>
           ))}
         </div>
+        {facet?.covenantId ? (
+          <div className="manifestation-stage">
+            <span className="manifestation-stage-label">Theory_Craft Glyph</span>
+            <strong>{facet.covenantId}</strong>
+            <p>Loaded from `BridgeWorld/Theory_Craft/bridgeworld/contracts/covenant_abi.json`.</p>
+          </div>
+        ) : null}
       </div>
     </Card>
   );
