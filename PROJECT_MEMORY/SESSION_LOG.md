@@ -1,5 +1,14 @@
 # Session Log
 
+## 2026-03-27 (session 5)
+
+- Anomaly events promoted to first-class triggers (commit 683119f).
+- `recordAnomaly` now: emits `anomaly-recorded` event, advances fren stage if confidence ≥ 0.7 and entry stage > current, syncs worldState.
+- `useAnomalyRuntime` hook: watches localStorage for `anomaly-ledger`, `fren-state`, `world-state` changes — reactive without page reload.
+- `ManifestationCard` and `ArbitrumCard` both use the hook — stage updates propagate live across the dashboard.
+- Removed `window.location.reload()` from ArbitrumCard.
+- Advanced queue to: convergence plan for five core Treasure repos.
+
 ## 2026-03-27 (session 4)
 
 - Canonical shared contracts added (commit 5825116):

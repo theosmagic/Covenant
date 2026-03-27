@@ -20,3 +20,15 @@ Arbitrum is the manifestation/world-form layer. Godot renders this world-facing 
 
 ## D-007: Convergence Over Reinvention
 The project should converge existing TreasureProject repos rather than invent parallel systems where existing substrate already exists.
+
+## D-008: TDK Session Is Canonical Operational Identity
+Magic token is the entry credential. After login, `tdk-js/auth` session is the operational identity anchor. Both coexist; TDK session is authoritative for chain operations.
+
+## D-009: AIFrensClient Is the Fren Capability Surface
+Do not reimplement chat, media generation, or agent-data in Covenant. Consume `aifrens-sdk` directly.
+
+## D-010: treasure-functions Is the Backend Persistence Plane
+Covenant's localStorage contracts (`anomalyLedger`, `frenState`, `worldState`) are working memory only. Durable anomaly records and command results settle to `treasure-functions`.
+
+## D-011: Godot Stage Rendering Is Event-Driven via Theory_Craft
+`stage-advanced` events relay through Theory_Craft server to Godot. Covenant does not talk to Godot directly.
